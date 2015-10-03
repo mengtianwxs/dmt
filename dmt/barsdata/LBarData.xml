@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mtstudio>
+<comment>this is a LBar simple data  format </comment>
+<Bar style="mode">
+  <shape>L</shape>
+  <order>A</order>
+  <barData>100*10</barData>
+  <overlap>1</overlap>
+  <middle>0</middle>
+  <width>100</width>
+  <height>50</height>
+  <xpos>0</xpos>
+  <ypos>0</ypos>
+  
+</Bar>
+<Bar style="draw">
+
+</Bar>
+</mtstudio>
