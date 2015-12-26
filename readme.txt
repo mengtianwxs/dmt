@@ -1,4 +1,4 @@
-/*
+﻿/*
  *          *   *   *   *      
            *     * *     *       
           *   ★  *  ★   *      
@@ -17,4 +17,5 @@
  * from mt studio 梦天
  * HKGN inc. 
  * software pai plus 
+ * This is HK TIME.
  */
