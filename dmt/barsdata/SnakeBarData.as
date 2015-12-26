@@ -27,40 +27,12 @@ package dmt.barsdata
 			this._d=D*k;
 			_l=getMMP(_h/_w);
 			this.addChild(a);
-			
+			startDraw();
 		}	
 		
-		public function set l(value:Number):void
-		{
-			_l = value;
-		}
+	
 
-		public function set d(value:Number):void
-		{
-			_d = value;
-		}
-
-		public function set xw(value:Number):void
-		{
-			_xw = value;
-		}
-
-		public function set sw(value:Number):void
-		{
-			_sw = value;
-		}
-
-		public function set h(value:Number):void
-		{
-			_h = value;
-		}
-
-		public function set w(value:Number):void
-		{
-			_w = value;
-		}
-
-		public function startDraw():void{
+		protected function startDraw():void{
 			a.graphics.lineStyle(0);
 			a.graphics.moveTo(0,0);
 			a.graphics.lineTo(0,_sw);
