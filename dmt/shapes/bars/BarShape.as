@@ -1,11 +1,12 @@
 package dmt.shapes.bars
 {
-	import flash.display.Sprite;
+	import flash.display.Shape;
 
-	public class BarShape extends Sprite
+	public class BarShape extends Shape
 	{
 		public function BarShape()
 		{
+			
 		}
 	}
 }
