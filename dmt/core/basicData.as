@@ -6,14 +6,40 @@ package dmt.core
 	{
 		
 		public var _a:Shape=new Shape();
-		public var _d:Number=0;
+		private var _d:Number=1;
+		public var _color:Number=0;
+		private var _k:Number=3;
 		
 		public function basicData()
 		{
-			super();
-		
+			this._d=_d*_k;
 		}
 		
+		
+
+		public function get k():Number
+		{
+			return _k;
+		}
+
+		public function get d():Number
+		{
+			return _d;
+		}
+
+		public function set d(value:Number):void
+		{
+			_d = value;
+			this._d=_d*_k;
+		}
+
+		public function set k(value:Number):void
+		{
+			_k = value;
+			this._d=_d*_k;
+			//startDraw();
+		}
+
 		protected function startDraw():void{}
 		
 		public function move(x:Number=0,y:Number=0):void{

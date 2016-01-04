@@ -7,6 +7,7 @@ package dmt.shapes.bars
 	{
 		public function SnakeBarShape(snakeBarData:SnakeBarData)
 		{
+			
 		}
 	}
 }

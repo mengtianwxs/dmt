@@ -19,11 +19,9 @@ package dmt.barsdata
                 public static const Mode_V:int=1;
                
 
-		public function SingleBarData(length:Number,mode:Number=0,D:Number=1,k:Number=3)
+		public function SingleBarData(length:Number,mode:Number=0)
 		{
-                 _len=length;
-                 _d=D*k;
-                 _k=k;
+                 _len=length; 
                  _mode=mode;
                   
                 
@@ -35,16 +33,16 @@ package dmt.barsdata
                 _a.graphics.lineStyle(0);
                 _a.graphics.moveTo(0,0);
                 _a.graphics.lineTo(_len,0);
-                _a.graphics.lineTo(_len,_d);
-                _a.graphics.lineTo(0,_d); 
+                _a.graphics.lineTo(_len,d);
+                _a.graphics.lineTo(0,d); 
                 _a.graphics.lineTo(0,0);                
                }
                 protected function startDrawV():void
                {
                 _a.graphics.lineStyle(0);
                 _a.graphics.moveTo(0,0);
-                _a.graphics.lineTo(_d,0);
-                _a.graphics.lineTo(_d,_len);
+                _a.graphics.lineTo(d,0);
+                _a.graphics.lineTo(d,_len);
                 _a.graphics.lineTo(0,_len); 
                 _a.graphics.lineTo(0,0);                
                }
