@@ -9,14 +9,15 @@ package dmt.barsdata
 		private var _len:Number;
 		public function HLineBarData(length:Number=0,color:uint=0)
 		{
-		
-			this._len=length;
 			this._color=color;
+			super();
+			this._len=length;
+			
 		}
 		
 		protected override function startDraw():void
 		{
-			_a.graphics.lineStyle(1,_color);
+			//_a.graphics.lineStyle(1,_color);
 			_a.graphics.moveTo(0,0);
 			_a.graphics.lineTo(_len,0);
 			_a.graphics.lineTo(_len,d);

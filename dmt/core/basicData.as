@@ -5,7 +5,7 @@ package dmt.core
 	public class basicData 
 	{
 		
-		public var _a:Shape=new Shape();
+		protected var _a:Shape=new Shape();
 		private var _d:Number=1;
 		public var _color:Number=0;
 		private var _k:Number=3;
@@ -13,9 +13,15 @@ package dmt.core
 		public function basicData()
 		{
 			this._d=_d*_k;
+			_a.graphics.lineStyle(0,_color,1,true);
 		}
 		
 		
+
+		public function get a():Shape
+		{
+			return _a;
+		}
 
 		public function get k():Number
 		{
@@ -24,6 +30,7 @@ package dmt.core
 
 		public function get d():Number
 		{
+			//startDraw();
 			return _d;
 		}
 
@@ -31,6 +38,7 @@ package dmt.core
 		{
 			_d = value;
 			this._d=_d*_k;
+		  
 		}
 
 		public function set k(value:Number):void
@@ -46,10 +54,14 @@ package dmt.core
 			_a.x=x;
 			_a.y=y;
 		}
-		
+		public function rotation(n:Number=0):void{
+			_a.rotationZ=n;
+		}
 		public	function getMMP(n:Number):Number{
 			return _d/Math.tan(Math.PI/180*((180/Math.PI*(Math.atan(n))+90)/2));
 		}	
+		
+		
 	}
 	
 }

@@ -17,18 +17,21 @@ package dmt.barsdata
 		
 		public function SnakeBarData(shangWanLen:Number=0,xiaWanLen:Number=0,width:Number=0,height:Number=0,color:uint=0)
 		{
+			this._color=color;
+			super();
+			
 			this._w=width;
 			
 			this._sw=shangWanLen;
 			this._xw=xiaWanLen;
 			this._h=height-shangWanLen-xiaWanLen;
 			_l=getMMP(_h/_w);
-			this._color=color;
+			//this._color=color;
 		}	
 		
 
 protected override	 function startDraw():void{
-			_a.graphics.lineStyle(_color);
+	//		_a.graphics.lineStyle(_color);
 			_a.graphics.moveTo(0,0);
 			_a.graphics.lineTo(0,_sw);
 			_a.graphics.lineTo(_w,_sw+_h);

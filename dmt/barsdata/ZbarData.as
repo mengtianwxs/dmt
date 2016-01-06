@@ -1,9 +1,12 @@
 package dmt.barsdata
 {
-	public class ZbarData
+	import dmt.core.basicData;
+
+	public class ZbarData extends basicData
 	{
 		public function ZbarData()
 		{
+			
 		}
 	}
 }
