@@ -14,14 +14,14 @@ package dmt.parse
 	*/
 	[Event(name="completed", type="events.XMLEvent")]
 	
-	public class ParseLBar extends EventDispatcher
+	public class ParseBarData extends EventDispatcher
 	{
 		public  var xml:XML;
 
 		private var l:LoaderXML;
 		
 		
-		public function ParseLBar(path:String)
+		public function ParseBarData(path:String)
 		{
 		   l=new LoaderXML(path);
 		   l.addEventListener(LoaderEvent.COMPLETED,onXMLComplete);

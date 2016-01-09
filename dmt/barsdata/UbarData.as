@@ -26,10 +26,10 @@ package dmt.barsdata
 		}
 		
 		protected override function startDraw():void{
-			
 			if(_u1>_u3){
 				u=_u1-_u3;
-			}else if(_u1==_u3){
+			}
+			else if(_u1==_u3){
 				u=0;
 				//trace("here");
 			}else if(_u1<_u3){
