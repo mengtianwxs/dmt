@@ -2,9 +2,12 @@
 {
 	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.net.FileFilter;
+	import flash.net.FileReference;
+	import flash.utils.ByteArray;
 	
 	import dmt.core.debug;
-	import dmt.menus.GroupLabel;
 	
 	public class DMT 
 	{
@@ -21,6 +24,7 @@
 		
 		private var _complexContainer:Sprite;
 		private static var _p:DisplayObjectContainer=null;
+		private var f:FileReference;
 		
 		public static const n:Number=Math.sqrt(100-  Math.pow((Math.sqrt(200)/2),2));
 		public static const c:Number=Math.sqrt(200);
@@ -58,6 +62,37 @@
 		
 		public  function get container():Sprite{
 			return _container;
+		}
+		
+		public function save(data:*, mz:String = ""):void {
+			//var ff:FileFilter = new FileFilter("*.pai","*.pai");
+			var fr:FileReference = new FileReference();
+			
+			var by:ByteArray = new ByteArray();
+			by.writeUTFBytes(data);
+			by.compress();
+			fr.save(by,mz+".pai");
+		}
+		public function combine():void {
+			f = new FileReference();
+			var fi:FileFilter = new FileFilter("*.pai","*.pai");
+		
+			f.browse([fi]);
+			f.addEventListener(Event.SELECT, onFileSelect);
+		}
+		
+		private function onFileSelect(e:Event):void 
+		{
+			f.load();
+			f.addEventListener(Event.COMPLETE, onFileComplete);
+		}
+		
+		private function onFileComplete(e:Event):void 
+		{
+			var byte:ByteArray = e.target.data as ByteArray;
+			byte.uncompress();
+			trace(byte);
+			
 		}
 		
 		debug static  function set GlobalUint(s:String):void{
