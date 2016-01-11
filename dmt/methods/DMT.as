@@ -76,7 +76,7 @@
 		public function combine():void {
 			f = new FileReference();
 			var fi:FileFilter = new FileFilter("*.pai","*.pai");
-			
+
 			f.browse([fi]);
 			f.addEventListener(Event.SELECT, onFileSelect);
 		}
