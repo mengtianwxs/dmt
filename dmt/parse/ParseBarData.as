@@ -1,28 +1,30 @@
 package dmt.parse
 {
+	import flash.display.Shape;
 	import flash.events.EventDispatcher;
 	
 	import crawlingtosea.events.LoaderEvent;
 	import crawlingtosea.loaders.LoaderXML;
 	
-	import dmt.events.XMLEvent;
+	import dmt.events.BAR_XMLEvent;
 	
 	/*
 	* @declare ParseLBar
 	* @author mengtianwxs
 	* @date 2015-6-1
 	*/
-	[Event(name="completed", type="events.XMLEvent")]
+	[Event(name="xml_compled", type="events.BAR_XMLEvent")]
 	
 	public class ParseBarData extends EventDispatcher
 	{
 		public  var xml:XML;
-		public  var _xpos:Number=0;
-		public  var _ypos:Number=0;
-		public  var _color:Number=0;
-		public  var _k:int=0;
-		public  var _d:Number=0;
-		public var _shape:String="";
+		private  var _xpos:Number=0;
+		private  var _ypos:Number=0;
+		private  var _color:Number=0;
+		private  var _k:int=0;
+		private   var _d:Number=0;
+		private  var _shape:String="";
+		private var _overlap:int=0;
 
 		private var shapes:LoaderXML=new LoaderXML();
 		
@@ -35,6 +37,12 @@ package dmt.parse
 
 		}
 		
+		public function get overlap():int
+		{
+			_overlap=(int)(this.Data.Bar.overlap)
+			return _overlap;
+		}
+
 		public function get shape():String
 		{
 			_shape=String(this.Data.Bar.shape);
@@ -76,14 +84,14 @@ package dmt.parse
 			// TODO Auto-generated method stub 
 			if(shapes.data!=null){
 				xml=shapes.data as XML;
-				this.dispatchEvent(new XMLEvent(XMLEvent.COMPLETED));
+				this.dispatchEvent(new BAR_XMLEvent(BAR_XMLEvent.XML_COMPLED));
 			}
 		}
 		
 		public function get Data():XML{
 			return xml;
 		}
+		}
 		
 		
 	}
-}

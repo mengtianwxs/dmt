@@ -1,21 +1,41 @@
-package dmt.shapes.bars
+﻿package dmt.shapes.bars
 {
-	import dmt.barsdata.BarData;
+	import flash.display.Shape;
+	
+	import crawlingtosea.events.LoaderEvent;
+	import crawlingtosea.loaders.LoaderXML;
+	
+	import dmt.barsdata.LbarData;
+	import dmt.parse.ParseBarData;
+	import dmt.parse.ParseLBarData;
+	
 
 	public class LBarShape extends SingleBar
 	{
-		public function LBarShape(data:*)
+		
+		private var _data:ParseLBarData;
+		
+		public function LBarShape(data:ParseBarData)
 		{
-			if(data!=null){
-				parseData(data);
-			}
+			_data=data as ParseLBarData;	
 		}
 		
-		private function parseData(d:Object):void
+		public  function get shape():Shape
 		{
-			// TODO Auto Generated method stub
 			
+			return new LbarData(_data.n1,_data.n2,_data.color).Data;
 		}		
+		
+		public function wirte(n1:Number,n2:Number,color:Number):void{
+			var xml:LoaderXML=new LoaderXML("dmt/barsXMLdata/LBarData.xml");
+			xml.addEventListener(LoaderEvent.COMPLETED,onXMLED);
+			function onXMLED(e:LoaderEvent):void{
+				trace(xml.data as XML);
+			}
+		}
+	
+		
+		
 		
 	}
 }
