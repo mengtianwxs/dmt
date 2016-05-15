@@ -4,13 +4,13 @@ package dmt.barsdata
 	
 	import dmt.core.basicData;
 
-	public class LbarData extends basicData
+	public class LBarData extends basicData
 	{
 		private var _n1:Number=0;
 		private var _n2:Number=0;
 		
 		
-		public function LbarData(n1:Number,n2:Number,color:uint=0)
+		public function LBarData(n1:Number,n2:Number,color:uint=0)
 		{
 			this._color=color;
 			super();
